@@ -4,6 +4,7 @@
 # Ignore Gradle and npm build output directory
 build
 node_modules
+bin
 
 # Ignore IDE outputs directory
 .vscode
