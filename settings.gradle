@@ -1,0 +1,3 @@
+rootProject.name = 'bcg'
+
+include ':taxi-ride-client', ':taxi-ride', ':ride-calculator'

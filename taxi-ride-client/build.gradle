@@ -1,0 +1,33 @@
+plugins {
+	id 'org.springframework.boot' version '2.3.1.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+}
+
+group = 'com.bcg.homework'
+sourceCompatibility = '11'
+
+dependencies {
+	implementation project(':taxi-ride')
+	implementation project(':ride-calculator')
+
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+	testImplementation 'io.projectreactor:reactor-test'
+}
+
+jar {
+		manifest {
+			attributes ('Main-Class': 'com.bcg.homework.taxi.RideFrontendApplication')
+		}
+    from {
+			configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+test {
+	useJUnitPlatform()
+}
