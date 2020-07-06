@@ -2,7 +2,7 @@ const path = require('path')
 
 module.exports = {
   mode: 'production',
-  entry: "./taxi-ride-client/src/main/frontend/src/index.tsx",
+  entry: "./taxi-ride-client/src/main/front/src/index.tsx",
   output: {
       filename: "app.js",
       path: path.join(__dirname, "./taxi-ride-client/src/main/resources/public")
